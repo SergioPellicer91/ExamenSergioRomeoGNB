@@ -24,14 +24,20 @@ namespace ExamenSergioRomeoGNB.Controllers
             this.ratesvc = RateService;
         }
 
-
         [HttpGet("GetTransactionsInEurSku/{sku}")]
         public IQueryable<Transaction> GetTransactionsInEur([FromRoute] string sku)
         {
             IQueryable<Transaction> trs = transactionRep.GetAllByField("Sku", sku);
             IQueryable<Rate> rts = rateRep.GetAll();
-            trs = TransactionConverter.CalculateAlgorithm(rts, trs, "EUR");
-            return trs;
+            return TransactionConverter.CalculateAlgorithm(rts, trs, "EUR");
+        }
+
+        [HttpGet("GetSvcTransactionInEurSku/{sku}")]
+        public IQueryable<Transaction> GetSvcTransactionsInEur([FromRoute] string sku)
+        {
+            IQueryable<Transaction> trs = transactionsvc.GetTransactionsBySku(sku);
+            IQueryable<Rate> rts = ratesvc.GetAllRates();
+            return TransactionConverter.CalculateAlgorithm(rts, trs, "EUR");
         }
     }
 }

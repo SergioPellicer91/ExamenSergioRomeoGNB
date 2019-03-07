@@ -1,7 +1,7 @@
 ﻿using ExamenSergioRomeoGNB.AppConfig;
 using ExamenSergioRomeoGNB.Models;
 using Microsoft.Extensions.Options;
-using System.Collections.Generic;
+using NLog;
 using System.Linq;
 
 namespace ExamenSergioRomeoGNB.ServiceRequests
@@ -9,20 +9,23 @@ namespace ExamenSergioRomeoGNB.ServiceRequests
     public class TransactionService : BaseService<Transaction>, ITransactionService
     {
         private readonly string url;
+        private readonly Logger Log;
 
-        public TransactionService(IOptions<UrlConfig> config)
+        public TransactionService(IOptions<UrlConfig> config, LogFactory Factory)
         {
             url = config.Value.TransactionsUrl;
+            Log = Factory.GetCurrentClassLogger();
         }
 
-        public IEnumerable<Transaction> GetAllTransactions()
+        public IQueryable<Transaction> GetAllTransactions()
         {
-            return base.GetAll(url);
+            Log.Info("Obteniendo transacciones desde el webservice.");
+            return base.GetAll(url,Log);
         }
 
-        public IEnumerable<Transaction> GetTransactionsBySku(string productSku)
+        public IQueryable<Transaction> GetTransactionsBySku(string productSku)
         {
-            IEnumerable<Transaction> all = base.GetAll(url);
+            IQueryable<Transaction> all = base.GetAll(url,Log);
             return all.Where(x => x.Sku.Equals(productSku));
         }
     }

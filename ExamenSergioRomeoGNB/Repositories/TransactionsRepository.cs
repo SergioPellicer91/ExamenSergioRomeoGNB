@@ -1,5 +1,6 @@
 ﻿using ExamenSergioRomeoGNB.Models;
 using Microsoft.EntityFrameworkCore;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,11 @@ namespace ExamenSergioRomeoGNB.Repositories
 {
     public class TransactionsRepository : GnbContext, IRepository<Transaction>
     {
-        public TransactionsRepository(DbContextOptions<GnbContext> options) : base(options)
+        private readonly Logger Log;
+
+        public TransactionsRepository(DbContextOptions<GnbContext> options, LogFactory Factory) : base(options)
         {
+            Log = Factory.GetCurrentClassLogger();
         }
 
         public int Commit()
@@ -22,15 +26,15 @@ namespace ExamenSergioRomeoGNB.Repositories
             }
             catch (DbUpdateConcurrencyException DbUpdateEx)
             {
-                //Log.Error(DbUpdateEx, "Error at updating Transaction.");
+                Log.Error(DbUpdateEx, "Error at updating Transaction.");
             }
             catch (DbUpdateException DbUpdateEx)
             {
-                //Log.Error(DbUpdateEx, "Error at updating Transaction.");
+                Log.Error(DbUpdateEx, "Error at updating Transaction.");
             }
             catch (Exception Ex)
             {
-                //Log.Error(Ex, "Error at updating Transaction.");
+                Log.Error(Ex, "Error at updating Transaction.");
             }
 
             return 0;
@@ -48,18 +52,17 @@ namespace ExamenSergioRomeoGNB.Repositories
             return Result.Entity.Id;
         }
 
-        public int CreateMultiple(IEnumerable<Transaction> TransactionList)
+        public int CreateMultiple(IEnumerable<Transaction> Entities)
         {
-            if (TransactionList == null)
+            if (Entities == null)
             {
-                TransactionList = new List<Transaction>();
+                Entities = new List<Transaction>();
             }
 
-            TransactionList.ToList().ForEach(r => this.Transactions.Add(r));
+            Entities.ToList().ForEach(r => this.Transactions.Add(r));
 
             var insertedRecords = this.Commit();
             return insertedRecords;
-
         }
 
         public bool DeleteAll()
@@ -81,14 +84,12 @@ namespace ExamenSergioRomeoGNB.Repositories
             return this.Transactions.AsQueryable();
         }
 
-        public IQueryable<Transaction> GetAllByField(string fieldName, string fieldValue)
+        public IQueryable<Transaction> GetAllByField(string field, string value)
         {
-            PropertyInfo prop = typeof(Transaction).GetProperty(fieldName);
-            IQueryable<Transaction> allByField = this.Transactions.Where(x => prop.GetValue(x).Equals(fieldValue));
+            PropertyInfo prop = typeof(Transaction).GetProperty(field);
+            IQueryable<Transaction> allByField = this.Transactions.Where(x => prop.GetValue(x).Equals(value));
             return allByField;
         }
-
-
 
         public Transaction GetSingle(int ID)
         {

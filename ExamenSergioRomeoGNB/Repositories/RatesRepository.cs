@@ -1,5 +1,6 @@
 ﻿using ExamenSergioRomeoGNB.Models;
 using Microsoft.EntityFrameworkCore;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +10,12 @@ namespace ExamenSergioRomeoGNB.Repositories
 {
     public class RatesRepository : GnbContext, IRepository<Rate>
     {
-        public RatesRepository(DbContextOptions<GnbContext> options) : base(options)
+        private readonly Logger Log;
+
+        public RatesRepository(DbContextOptions<GnbContext> options, LogFactory Factory) : base(options)
         {
+            Log = Factory.GetCurrentClassLogger();
         }
-
-
-        /*private readonly Logger Log;
-
-        public RateRepository(LogFactory Factory)
-        {
-           Log = Factory.GetCurrentClassLogger();
-        }*/
-
-
 
         public int Commit()
         {
@@ -31,15 +25,15 @@ namespace ExamenSergioRomeoGNB.Repositories
             }
             catch (DbUpdateConcurrencyException DbUpdateEx)
             {
-                //Log.Error(DbUpdateEx, "Error at updating Rate.");
+                Log.Error(DbUpdateEx, "Error at updating Rate.");
             }
             catch (DbUpdateException DbUpdateEx)
             {
-                //Log.Error(DbUpdateEx, "Error at updating Rate.");
+                Log.Error(DbUpdateEx, "Error at updating Rate.");
             }
             catch (Exception Ex)
             {
-                //Log.Error(Ex, "Error at updating Rate.");
+                Log.Error(Ex, "Error at updating Rate.");
             }
 
             return 0;
@@ -57,18 +51,17 @@ namespace ExamenSergioRomeoGNB.Repositories
             return Result.Entity.Id;
         }
 
-        public int CreateMultiple(IEnumerable<Rate> Rates)
+        public int CreateMultiple(IEnumerable<Rate> Entities)
         {
-            if (Rates == null)
+            if (Entities == null)
             {
-                Rates = new List<Rate>();
+                Entities = new List<Rate>();
             }
 
-            Rates.ToList().ForEach(r => this.Rates.Add(r));
+            Entities.ToList().ForEach(r => this.Rates.Add(r));
 
             var insertedRecords = this.Commit();
             return insertedRecords;
-
         }
 
         public bool DeleteAll()
@@ -77,7 +70,6 @@ namespace ExamenSergioRomeoGNB.Repositories
 
             return true;
         }
-
 
         public bool Delete(Rate Entity)
         {
@@ -92,12 +84,11 @@ namespace ExamenSergioRomeoGNB.Repositories
             return this.Rates.AsQueryable();
         }
 
-        public IQueryable<Rate> GetAllByField(string fieldName, string fieldValue)
+        public IQueryable<Rate> GetAllByField(string field, string value)
         {
             IQueryable<Rate> all = this.GetAll();
-            return all.Where(x => x.GetType().GetProperty(fieldName).GetValue(x).Equals(fieldValue));
+            return all.Where(x => x.GetType().GetProperty(field).GetValue(x).Equals(value));
         }
-
 
         public Rate GetSingle(int ID)
         {

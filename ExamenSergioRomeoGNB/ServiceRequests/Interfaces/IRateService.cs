@@ -1,10 +1,10 @@
 ﻿using ExamenSergioRomeoGNB.Models;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace ExamenSergioRomeoGNB.ServiceRequests
 {
     public interface IRateService
     {
-        IEnumerable<Rate> GetAllRates();
+        IQueryable<Rate> GetAllRates();
     }
 }

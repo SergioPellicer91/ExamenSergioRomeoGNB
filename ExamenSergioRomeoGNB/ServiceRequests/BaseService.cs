@@ -1,14 +1,15 @@
 ﻿using Newtonsoft.Json;
+using NLog;
 using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 
 namespace ExamenSergioRomeoGNB.ServiceRequests
 {
     public abstract class BaseService<T> where T : class
     {
-        public IEnumerable<T> GetAll(string url)
+        public IQueryable<T> GetAll(string url, Logger Log)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             try
@@ -17,7 +18,7 @@ namespace ExamenSergioRomeoGNB.ServiceRequests
                 using (Stream responseStream = response.GetResponseStream())
                 {
                     StreamReader reader = new StreamReader(responseStream, System.Text.Encoding.UTF8);
-                    return JsonConvert.DeserializeObject<IEnumerable<T>>(reader.ReadToEnd());
+                    return JsonConvert.DeserializeObject<IQueryable<T>>(reader.ReadToEnd());
                 }
             }
             catch (WebException ex)
@@ -27,7 +28,7 @@ namespace ExamenSergioRomeoGNB.ServiceRequests
                 {
                     StreamReader reader = new StreamReader(responseStream, System.Text.Encoding.GetEncoding("utf-8"));
                     String errorText = reader.ReadToEnd();
-                    // log errorText
+                    Log.Error(errorText);
                 }
                 throw;
             }

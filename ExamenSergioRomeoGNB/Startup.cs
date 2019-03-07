@@ -29,8 +29,6 @@ namespace ExamenSergioRomeoGNB
 
             //Logging Injection
             services.AddSingleton(NLog.LogManager.LoadConfiguration("NLog.config"));
-
-
             //Dependency injection: Context
             services.AddDbContext<GnbContext>(options => options.UseSqlServer(Configuration["LocalDb:DbConnection"]));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -42,7 +40,6 @@ namespace ExamenSergioRomeoGNB
             //Dependency injection: Services
             services.AddScoped<ITransactionService, TransactionService>();
             services.AddScoped<IRateService, RateService>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,7 +59,6 @@ namespace ExamenSergioRomeoGNB
                 var context = serviceScope.ServiceProvider.GetRequiredService<GnbContext>();
                 context.Database.Migrate();
             }
-
 
             app.UseHttpsRedirection();
             app.UseMvc();

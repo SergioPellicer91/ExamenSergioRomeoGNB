@@ -7,11 +7,9 @@ namespace ExamenSergioRomeoGNB.Models
         public GnbContext(DbContextOptions<GnbContext> options)
             : base(options)
         {
-
         }
 
         public DbSet<Rate> Rates { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-
     }
 }

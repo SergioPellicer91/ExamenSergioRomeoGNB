@@ -1,11 +1,11 @@
 ﻿using ExamenSergioRomeoGNB.Models;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace ExamenSergioRomeoGNB.ServiceRequests
 {
     public interface ITransactionService
     {
-        IEnumerable<Transaction> GetAllTransactions();
-        IEnumerable<Transaction> GetTransactionsBySku(string productSku);
+        IQueryable<Transaction> GetAllTransactions();
+        IQueryable<Transaction> GetTransactionsBySku(string productSku);
     }
 }
