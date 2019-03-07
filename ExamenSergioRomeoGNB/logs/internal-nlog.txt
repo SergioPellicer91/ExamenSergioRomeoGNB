@@ -1,0 +1,40 @@
+2019-03-07 20:52:56.8968 Info Message Template Auto Format enabled
+2019-03-07 20:52:57.0124 Info Adding target File Target[logfile]
+2019-03-07 20:52:57.0124 Info Adding target File Target[errorLogFile]
+2019-03-07 20:52:57.0360 Info Adding target Console Target[logconsole]
+2019-03-07 20:52:57.0521 Info Configured from an XML element in C:\Users\CTA\source\repos\ExamenSergioRomeoGNB\ExamenSergioRomeoGNB\bin\Debug\netcoreapp2.1\NLog.config...
+2019-03-07 20:52:57.0802 Info Found 40 configuration items
+2019-03-07 20:54:46.8924 Info Message Template Auto Format enabled
+2019-03-07 20:54:46.9425 Info Adding target File Target[logfile]
+2019-03-07 20:54:46.9493 Info Adding target File Target[errorLogFile]
+2019-03-07 20:54:46.9493 Info Adding target Console Target[logconsole]
+2019-03-07 20:54:46.9493 Info Configured from an XML element in C:\Users\CTA\source\repos\ExamenSergioRomeoGNB\ExamenSergioRomeoGNB\bin\Debug\netcoreapp2.1\NLog.config...
+2019-03-07 20:54:46.9790 Info Found 40 configuration items
+2019-03-07 20:55:34.0778 Info Message Template Auto Format enabled
+2019-03-07 20:55:34.1418 Info Adding target File Target[logfile]
+2019-03-07 20:55:34.1418 Info Adding target File Target[errorLogFile]
+2019-03-07 20:55:34.1418 Info Adding target Console Target[logconsole]
+2019-03-07 20:55:34.1557 Info Configured from an XML element in C:\Users\CTA\source\repos\ExamenSergioRomeoGNB\ExamenSergioRomeoGNB\bin\Debug\netcoreapp2.1\NLog.config...
+2019-03-07 20:55:34.1792 Info Found 40 configuration items
+2019-03-07 20:55:34.3293 Info Shutting down logging...
+2019-03-07 20:55:34.3498 Info Logger has been shut down.
+2019-03-07 20:55:49.5767 Info Message Template Auto Format enabled
+2019-03-07 20:55:49.6254 Info Adding target File Target[logfile]
+2019-03-07 20:55:49.6254 Info Adding target File Target[errorLogFile]
+2019-03-07 20:55:49.6254 Info Adding target Console Target[logconsole]
+2019-03-07 20:55:49.6368 Info Configured from an XML element in C:\Users\CTA\source\repos\ExamenSergioRomeoGNB\ExamenSergioRomeoGNB\bin\Debug\netcoreapp2.1\NLog.config...
+2019-03-07 20:55:49.6554 Info Found 40 configuration items
+2019-03-07 20:55:51.6709 Info Shutting down logging...
+2019-03-07 20:55:51.6904 Info Logger has been shut down.
+2019-03-07 20:56:04.5143 Info Message Template Auto Format enabled
+2019-03-07 20:56:04.6428 Info Adding target File Target[logfile]
+2019-03-07 20:56:04.6428 Info Adding target File Target[errorLogFile]
+2019-03-07 20:56:04.6428 Info Adding target Console Target[logconsole]
+2019-03-07 20:56:04.6595 Info Configured from an XML element in C:\Users\CTA\source\repos\ExamenSergioRomeoGNB\ExamenSergioRomeoGNB\bin\Debug\netcoreapp2.1\NLog.config...
+2019-03-07 20:56:04.6837 Info Found 40 configuration items
+2019-03-07 20:57:05.3948 Info Message Template Auto Format enabled
+2019-03-07 20:57:05.4914 Info Adding target File Target[logfile]
+2019-03-07 20:57:05.4948 Info Adding target File Target[errorLogFile]
+2019-03-07 20:57:05.4948 Info Adding target Console Target[logconsole]
+2019-03-07 20:57:05.5096 Info Configured from an XML element in C:\Users\CTA\source\repos\ExamenSergioRomeoGNB\ExamenSergioRomeoGNB\bin\Debug\netcoreapp2.1\NLog.config...
+2019-03-07 20:57:05.5402 Info Found 40 configuration items

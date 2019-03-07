@@ -5,7 +5,7 @@ using ExamenSergioRomeoGNB.ServiceRequests;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
-namespace GNBSergioRP.Controllers
+namespace ExamenSergioRomeoGNB.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

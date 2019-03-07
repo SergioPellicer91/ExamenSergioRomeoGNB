@@ -28,7 +28,7 @@ namespace ExamenSergioRomeoGNB
             services.Configure<DbConfig>(Configuration.GetSection("LocalDb"));
 
             //Logging Injection
-            services.AddSingleton(NLog.LogManager.LoadConfiguration("NLog.Config"));
+            services.AddSingleton(NLog.LogManager.LoadConfiguration("NLog.config"));
 
 
             //Dependency injection: Context
