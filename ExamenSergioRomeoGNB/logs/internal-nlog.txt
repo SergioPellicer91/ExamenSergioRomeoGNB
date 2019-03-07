@@ -38,3 +38,21 @@
 2019-03-07 20:57:05.4948 Info Adding target Console Target[logconsole]
 2019-03-07 20:57:05.5096 Info Configured from an XML element in C:\Users\CTA\source\repos\ExamenSergioRomeoGNB\ExamenSergioRomeoGNB\bin\Debug\netcoreapp2.1\NLog.config...
 2019-03-07 20:57:05.5402 Info Found 40 configuration items
+2019-03-07 21:23:14.9583 Info Message Template Auto Format enabled
+2019-03-07 21:23:15.0809 Info Adding target File Target[logfile]
+2019-03-07 21:23:15.0809 Info Adding target File Target[errorLogFile]
+2019-03-07 21:23:15.0809 Info Adding target Console Target[logconsole]
+2019-03-07 21:23:15.0966 Info Configured from an XML element in C:\Users\CTA\source\repos\ExamenSergioRomeoGNB\ExamenSergioRomeoGNB\bin\Debug\netcoreapp2.1\NLog.config...
+2019-03-07 21:23:15.1205 Info Found 40 configuration items
+2019-03-07 21:30:16.4016 Info Message Template Auto Format enabled
+2019-03-07 21:30:16.5120 Info Adding target File Target[logfile]
+2019-03-07 21:30:16.5120 Info Adding target File Target[errorLogFile]
+2019-03-07 21:30:16.5120 Info Adding target Console Target[logconsole]
+2019-03-07 21:30:16.5265 Info Configured from an XML element in C:\Users\CTA\source\repos\ExamenSergioRomeoGNB\ExamenSergioRomeoGNB\bin\Debug\netcoreapp2.1\NLog.config...
+2019-03-07 21:30:16.5571 Info Found 40 configuration items
+2019-03-07 21:46:27.3183 Info Message Template Auto Format enabled
+2019-03-07 21:46:27.4471 Info Adding target File Target[logfile]
+2019-03-07 21:46:27.4471 Info Adding target File Target[errorLogFile]
+2019-03-07 21:46:27.4471 Info Adding target Console Target[logconsole]
+2019-03-07 21:46:27.4632 Info Configured from an XML element in C:\Users\CTA\source\repos\ExamenSergioRomeoGNB\ExamenSergioRomeoGNB\bin\Debug\netcoreapp2.1\NLog.config...
+2019-03-07 21:46:27.4908 Info Found 40 configuration items

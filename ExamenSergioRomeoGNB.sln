@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamenSergioRomeoGNB", "ExamenSergioRomeoGNB\ExamenSergioRomeoGNB.csproj", "{98A4DF82-24DC-421F-9B8A-B1DEFD11B754}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamenSergioRomeoTests", "ExamenSergioRomeoTests\ExamenSergioRomeoTests.csproj", "{ECB35633-D5D0-4B35-8744-8F73DFE9AE52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{98A4DF82-24DC-421F-9B8A-B1DEFD11B754}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A4DF82-24DC-421F-9B8A-B1DEFD11B754}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98A4DF82-24DC-421F-9B8A-B1DEFD11B754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB35633-D5D0-4B35-8744-8F73DFE9AE52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB35633-D5D0-4B35-8744-8F73DFE9AE52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB35633-D5D0-4B35-8744-8F73DFE9AE52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB35633-D5D0-4B35-8744-8F73DFE9AE52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
