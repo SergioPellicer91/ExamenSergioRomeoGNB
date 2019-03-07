@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GNBSergioRP.Models
+namespace ExamenSergioRomeoGNB.Models
 {
     public partial class Transaction
     {

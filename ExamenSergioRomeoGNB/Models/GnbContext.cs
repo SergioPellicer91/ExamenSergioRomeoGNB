@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace GNBSergioRP.Models
+namespace ExamenSergioRomeoGNB.Models
 {
     public class GnbContext : DbContext
     {
